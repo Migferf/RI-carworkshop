@@ -47,8 +47,8 @@
 		<query>select a from Averia a</query>
 	</named-query>
 	
-	<named-query name="Averid.findById">
-		<query></query>
+	<named-query name="Averia.findById">
+		<query>select a from Averia a where id= :id</query>
 	</named-query>
 	
 	<named-query name="Averia.findByVehiculoId">

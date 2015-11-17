@@ -18,5 +18,12 @@ public class AveriaFinder {
 				.createNamedQuery("Averia.findByVehiculoId",Averia.class)
 				.setParameter("vehiculo_id", vehiculoId).getResultList();
 	}
+	
+	public static Averia findById(long id)
+	{
+		return Jpa.getManager()
+				.createNamedQuery("Averia.findById",Averia.class)
+				.setParameter("id", id).getSingleResult();
+	}
 
 }

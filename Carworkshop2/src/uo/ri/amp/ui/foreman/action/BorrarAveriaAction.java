@@ -27,6 +27,8 @@ public class BorrarAveriaAction implements Action{
 		List<Averia> averias=ServicesFactory.getForemanService().mostrarAveriasVehiculo(vehiculo);
 		System.out.println("Se muestran las averías existentes en el vehículo");
 		mostrarAverias(averias);
+		
+		
 		long averiaId=checkLong(Console.readString("Introduzca un ID de las averías listadas anteriormente"));
 		ServicesFactory.getForemanService().borrarAveria(averiaId);
 		
