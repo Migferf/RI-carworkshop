@@ -47,18 +47,14 @@ public class Averia {
 	@OneToMany(mappedBy = "averia")
 	private Set<Intervencion> intervenciones = new HashSet<Intervencion>();
 
-	public Averia(Date fecha, Vehiculo vehiculo) {
+	public Averia(Vehiculo vehiculo,Date fecha, String descripcion) {
 		super();
 		this.fecha = fecha;
 		this.vehiculo = vehiculo;
+		this.descripcion=descripcion;
+		status=AveriaStatus.ABIERTA;
 		Association.Averiar.link(this, vehiculo);
 	}
-
-	public Averia(Vehiculo vehiculo, String descripcion) {
-		this(new Date(), vehiculo);
-		this.descripcion = descripcion;
-	}
-
 	Averia() {
 	}
 
@@ -177,7 +173,7 @@ public class Averia {
 		this.importe = Round.twoCents(suma);
 	}
 
-	public Object getId() {
+	public long getId() {
 		return this.id;
 	}
 

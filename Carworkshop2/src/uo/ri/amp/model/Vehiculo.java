@@ -139,7 +139,7 @@ public class Vehiculo {
 		Association.Averiar.unlink(averia, this);
 	}
 
-	public Object getId() {
+	public long getId() {
 		return this.id;
 	}
 

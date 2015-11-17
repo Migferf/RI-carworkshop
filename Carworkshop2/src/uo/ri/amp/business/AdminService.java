@@ -7,5 +7,7 @@ import uo.ri.amp.model.exception.BusinessException;
 
 public interface AdminService {
 	
+	
+	
 	public List<Curso> listarCursos() throws BusinessException;
 }

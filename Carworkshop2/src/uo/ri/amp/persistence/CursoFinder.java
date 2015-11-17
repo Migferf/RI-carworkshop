@@ -9,7 +9,6 @@ public class CursoFinder {
 	
 	public static List<Curso> findAll()
 	{
-		Jpa.createEntityManager();
 		return Jpa.getManager()
 				.createNamedQuery("Curso.findAll",Curso.class).getResultList();
 	}

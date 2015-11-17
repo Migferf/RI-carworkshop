@@ -10,7 +10,7 @@ public class MainMenu extends BaseMenu {
 			{"Administrador", null },
 			{"Gestión de cursos",			CursoMenu.class},
 			{"Gestión de certificados",		GenerarCertificados.class},
-			{"Listados de interés: ",		ListasMenu.class},
+			{"Listados de interés",		ListasMenu.class},
 		};
 	}
 

@@ -3,17 +3,20 @@ package uo.ri.amp.persistence;
 import java.util.List;
 
 import uo.ri.amp.model.Averia;
+import uo.ri.amp.persistence.util.Jpa;
 
 public class AveriaFinder {
 
-	public static List<Averia> findByIds(List<Long> idsAveria) {
+	public static List<Averia> findByMatricula(List<Long> idsAveria) {
 
 		return null;
 	}
 
-	public static List<Averia> findNoFacturadasByDni(String dni) {
+	public static List<Averia> findByVehiculoId(long vehiculoId) {
 
-		return null;
+		return Jpa.getManager()
+				.createNamedQuery("Averia.findByVehiculoId",Averia.class)
+				.setParameter("vehiculo_id", vehiculoId).getResultList();
 	}
 
 }
