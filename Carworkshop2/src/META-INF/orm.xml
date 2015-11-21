@@ -10,6 +10,10 @@
 		<query>select m from Mecanico m</query>
 	</named-query>
 	
+	<named-query name="Mecanico.findByApellidos">
+		<query>select m from Mecanico m where apellidos like :apellidos</query>
+	</named-query>
+	
 	<!-- Vehiculo queries -->
 	<named-query name="Vehiculo.findAll">
 		<query>select v from Vehiculo v</query>
@@ -41,6 +45,10 @@
 		<query>select a from Asistencia a where a.curso= :curso</query>
 	</named-query>
 	
+	<named-query name="Asistencia.findByIds">
+		<query>select a from Asistencia a where a.curso=:curso and a.mecanico=:mecanico</query>
+	</named-query>
+	
 	<!-- Averia queries -->
 	
 	<named-query name="Averia.findAll">
@@ -53,6 +61,11 @@
 	
 	<named-query name="Averia.findByVehiculoId">
 		<query>select a from Averia a where vehiculo_id= :vehiculo_id</query>
+	</named-query>
+	
+	<!-- TipoVehiculo queries -->
+	<named-query name="TipoVehiculo.findAll">
+		<query>select tp from TipoVehiculo tp</query>
 	</named-query>
 <!-- 
 	<named-query name="findItemsOnSaleByCategoryId">

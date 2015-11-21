@@ -32,10 +32,19 @@ public class Curso {
 
 	Curso(){}
 	
-	public Curso(String codigo) {
-		
+	
+	
+
+	public Curso(String codigo, String nombre, String descripcion, int horasTotales) {
+		super();
 		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.horasTotales = horasTotales;				
 	}
+
+
+
 
 	public String getCodigo() {
 		return codigo;

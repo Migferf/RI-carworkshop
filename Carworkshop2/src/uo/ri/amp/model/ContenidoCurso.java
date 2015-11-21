@@ -27,9 +27,11 @@ public class ContenidoCurso {
 
 	ContenidoCurso() {}
 	
-	public ContenidoCurso(Curso curso, TipoVehiculo tipoVehiculo) {
+	public ContenidoCurso(Curso curso, TipoVehiculo tipoVehiculo, double porcentajeHoras) {
 		super();
+		this.porcentajeHoras=porcentajeHoras;
 		Association.Contener.link(this, curso, tipoVehiculo);
+		
 	}
 
 	public TipoVehiculo getTipoVehiculo() {

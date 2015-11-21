@@ -33,10 +33,11 @@ public class TipoVehiculo {
 	@OneToMany(mappedBy="tipoVehiculo")
 	private Set<Experto> expertos=new HashSet<Experto>();
 	
-	public TipoVehiculo(String nombre, double precioHora) {
+	public TipoVehiculo(String nombre, double precioHora, int horasExperto) {
 		super();
 		this.nombre = nombre;
 		this.precioHora = precioHora;
+		this.horasExperto=horasExperto;
 	}
 
 	TipoVehiculo() {

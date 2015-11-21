@@ -35,8 +35,13 @@ public class Asistencia {
 
 	Asistencia(){}
 	
-	public Asistencia(Mecanico mecanico, Curso curso) {
+	public Asistencia(Mecanico mecanico, Curso curso, Date fechaInicio, Date fechaFin,
+			double porcentajeAsistencia,boolean apto) {
 		super();
+		this.fechaInicio=fechaFin;
+		this.fechaFin=fechaFin;
+		this.porcentajeAsistencia=porcentajeAsistencia;
+		this.apto=apto;
 		Association.Asistir.link(this, mecanico, curso);
 	}
 

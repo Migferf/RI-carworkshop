@@ -5,6 +5,7 @@ import uo.ri.amp.ui.admin.ListasMenu;
 import uo.ri.amp.ui.admin.action.GenerarCertificados;
 import uo.ri.amp.ui.foreman.action.AñadirAveriaAction;
 import uo.ri.amp.ui.foreman.action.BorrarAveriaAction;
+import uo.ri.amp.ui.foreman.action.ListarAveriasVehiculoAction;
 
 public class MainMenu extends BaseMenu {
 
@@ -14,7 +15,7 @@ public class MainMenu extends BaseMenu {
 			{"Añadir una avería",							AñadirAveriaAction.class},
 			{"Modificar una avería",						GenerarCertificados.class},
 			{"Borrar una avería",							BorrarAveriaAction.class},
-			{"Ver historial de averías de un vehículo",		ListasMenu.class},
+			{"Ver historial de averías de un vehículo",		ListarAveriasVehiculoAction.class},
 			{"Asignar una avería a un mecánico",			ListasMenu.class},
 		};
 	}

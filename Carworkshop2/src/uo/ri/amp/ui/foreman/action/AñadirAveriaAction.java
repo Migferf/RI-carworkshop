@@ -1,6 +1,6 @@
 package uo.ri.amp.ui.foreman.action;
 
-import static uo.ri.amp.ui.validacion.Lector.checkDate;
+import static uo.ri.amp.ui.util.Lector.checkDate;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

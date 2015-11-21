@@ -1,5 +1,7 @@
 package uo.ri.amp.ui.foreman.action;
 
+import static uo.ri.amp.ui.util.Lector.*;
+
 import java.util.List;
 
 import alb.util.console.Console;
@@ -8,7 +10,6 @@ import uo.ri.amp.conf.ServicesFactory;
 import uo.ri.amp.model.Averia;
 import uo.ri.amp.model.Vehiculo;
 import uo.ri.amp.model.exception.BusinessException;
-import static uo.ri.amp.ui.validacion.Lector.*;
 
 public class BorrarAveriaAction implements Action{
 
