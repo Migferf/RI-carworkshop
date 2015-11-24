@@ -14,6 +14,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * Clase gestora de Jpa, todas las llamadas se deben hacer desde esta clase.
+ * @author UO223936
+ *
+ */
 public class Jpa {
 
 	private static EntityManagerFactory emf = null;

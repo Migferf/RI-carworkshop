@@ -7,6 +7,7 @@ import uo.ri.amp.model.Asistencia;
 import uo.ri.amp.model.Curso;
 import uo.ri.amp.model.Mecanico;
 import uo.ri.amp.model.exception.BusinessException;
+import uo.ri.amp.persistence.AsistenciaFinder;
 import uo.ri.amp.persistence.CursoFinder;
 import uo.ri.amp.persistence.MecanicoFinder;
 import uo.ri.amp.persistence.util.Jpa;
@@ -54,7 +55,12 @@ public class AñadirAsistencia implements Command {
 		
 		Curso c=CursoFinder.findByCodigo(codigo);
 		assertNotNull(c);
+		Asistencia a= AsistenciaFinder.findByIds(m, c);
 		
+		if(a!=null)
+		{
+			throw new BusinessException("El mecánico ya asistía a este curso");
+		}
 		Asistencia asistencia= new Asistencia(m,c,fechaComienzo,fechaFin,porcentaje,apto);
 		Jpa.getManager().persist(asistencia);
 		

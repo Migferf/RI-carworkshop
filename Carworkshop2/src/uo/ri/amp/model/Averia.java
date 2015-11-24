@@ -78,6 +78,11 @@ public class Averia {
 		return this.mecanico;
 	}
 
+	public void asignarMecanico(Mecanico m)
+	{
+		Association.Asignar.link(m,this);
+	}
+	
 	void _setMecanico(Mecanico mecanico) {
 		this.mecanico = mecanico;
 	}
@@ -120,6 +125,11 @@ public class Averia {
 
 	public Date getFecha() {
 		return fecha;
+	}
+	
+	public void setFecha(Date fecha)
+	{
+		this.fecha=fecha;
 	}
 
 	@Override

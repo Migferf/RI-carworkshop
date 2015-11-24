@@ -13,15 +13,19 @@ import uo.ri.amp.model.Curso;
 import uo.ri.amp.model.TipoVehiculo;
 import uo.ri.amp.model.exception.BusinessException;
 
+/**
+ * Añade un curso a la base de datos.
+ * @author UO223936
+ *
+ */
 public class AñadirCursoAction implements Action {
 
 	@Override
 	public void execute() {
 
+		//Datos
 		String codigo = Console.readString("Introduzca el código del curso");
-
 		String nombre = Console.readString("Introduzca el nombre del curso");
-
 		String descripcion = Console.readString("Introduzca una descripción del curso");
 
 		int horasTotales = NOT_VALID_INPUT;
@@ -29,6 +33,7 @@ public class AñadirCursoAction implements Action {
 			horasTotales = checkInt(Console.readString("Introduzca el número de horas totales del curso"));
 		} while (horasTotales == NOT_VALID_INPUT);
 
+		//Contenido curso
 		List<TipoVehiculo> tipos;
 		try {
 			tipos = ServicesFactory.getAdminService().listarTiposVehiculo();
@@ -43,12 +48,17 @@ public class AñadirCursoAction implements Action {
 				porcentajes = new ArrayList<Double>();
 				porc = 0;
 				for (TipoVehiculo tp : tipos) {
-					double cantidad = checkDouble(Console.readString(tp.getNombre()));
+					double cantidad =NOT_VALID_INPUT;
+					do {
+						cantidad = checkDouble(Console.readString(tp.getNombre()));
+					} while (cantidad==NOT_VALID_INPUT);
+					
 					porc = cantidad + porc;
 					porcentajes.add(cantidad);
 				}
 			} while (!checkPorcSum(porc));
-
+			
+			//Realizar operación
 			ServicesFactory.getAdminService().añadirCurso(new Curso(codigo, nombre, descripcion, horasTotales),
 					porcentajes);
 			

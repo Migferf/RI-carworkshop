@@ -13,6 +13,11 @@ import uo.ri.amp.model.Mecanico;
 import uo.ri.amp.model.exception.BusinessException;
 import uo.ri.amp.ui.util.CollectionsPrinter;
 
+/**
+ * Borra una asistencia de la base de datos.
+ * @author UO223936
+ *
+ */
 public class BorrarAsistenciaAction implements Action {
 
 	@Override
@@ -20,6 +25,7 @@ public class BorrarAsistenciaAction implements Action {
 	
 		try
 		{
+		//Pedir mecánico
 		String apellidos=Console.readString("Introduzca los apellidos"
 				+ " del mecánico al que quiera borrar la asistencia "
 				+ "(puede ser solo un apellido)");
@@ -38,8 +44,10 @@ public class BorrarAsistenciaAction implements Action {
 					+ " del que quiera borrar la asistencia"));
 		} while (idMecanico==NOT_VALID_INPUT);
 		
+		//Pedir curso
 		String codigo=Console.readString("Introduzca el código del curso cuya asistencia desee borrar");
 		
+		//Realizar operación
 		ServicesFactory.getAdminService().borrarAsistencia(idMecanico, codigo);
 		
 		System.out.println("Asistencia eliminada correctamente");

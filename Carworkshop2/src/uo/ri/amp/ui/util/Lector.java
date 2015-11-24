@@ -8,7 +8,7 @@ import java.util.Date;
  * Validaciones para todos los campos introducidos por el usuario que lo
  * requieran. No se valida la lógica de negocio.
  * 
- * @author Miguel Fernández Fuentes
+ * @author UO223936
  *
  */
 public class Lector {

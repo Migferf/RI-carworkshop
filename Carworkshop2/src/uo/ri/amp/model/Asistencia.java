@@ -89,6 +89,11 @@ public class Asistencia {
 	public boolean isApto() {
 		return apto;
 	}
+	
+	public void setApto(boolean apto)
+	{
+		this.apto=apto;
+	}
 
 	@Override
 	public int hashCode() {

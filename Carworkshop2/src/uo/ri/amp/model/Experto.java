@@ -35,6 +35,7 @@ public class Experto {
 	public Experto(Mecanico mecanico, TipoVehiculo tipoVehiculo) {
 		super();
 		Association.ExpertoEn.link(this, mecanico, tipoVehiculo);
+		fechaCertificado=new Date();
 		
 	}
 

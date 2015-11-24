@@ -1,16 +1,22 @@
 package uo.ri.amp.ui.admin;
 
 import alb.util.menu.BaseMenu;
-import uo.ri.amp.ui.admin.action.GenerarCertificados;
+import uo.ri.amp.ui.admin.action.GenerarCertificadosAction;
+import uo.ri.amp.ui.util.FixedMenu;
 
-public class MainMenu extends BaseMenu {
+/**
+ * Menú principal del administrador del sistema.
+ * @author UO223936
+ * @see BaseMenu
+ */
+public class MainMenu extends FixedMenu {
 
 	public MainMenu() {
 		menuOptions = new Object[][] { 
 			{"Administrador", null },
 			{"Gestión de cursos",			CursoMenu.class},
-			{"Gestión de certificados",		GenerarCertificados.class},
-			{"Listados de interés",		ListasMenu.class},
+			{"Gestión de certificados",		GenerarCertificadosAction.class},
+			{"Listados de interés",			ListasMenu.class},
 		};
 	}
 
